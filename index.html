@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Interactive Resume Builder</h1>
+    </header>
+    
+    <section class="form-section">
+      <h2>Enter Your Details</h2>
+      <form id="resume-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="summary">Profile Summary:</label>
+          <textarea id="summary" name="summary" placeholder="Brief summary about yourself" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="skills">Skills:</label>
+            <div id="skills-container">
+              <input type="checkbox" name="skills" value="HTML"> HTML
+              <input type="checkbox" name="skills" value="CSS"> CSS
+              <input type="checkbox" name="skills" value="JavaScript"> JavaScript
+              <input type="checkbox" name="skills" value="React"> React
+              <input type="checkbox" name="skills" value="Node.js"> Node.js
+            </div>
+            <input type="text" id="new-skill" placeholder="Enter a new skill">
+            <button type="button" id="add-skill">Add Skill</button>
+          </div>
+
+        <div class="form-group">
+          <label>Education:</label>
+          <div id="education-container">
+            <div class="education-row">
+              <input type="text" placeholder="Degree" name="degree[]">
+              <input type="text" placeholder="Institution" name="institution[]">
+              <input type="text" placeholder="Year" name="year[]">
+            </div>
+          </div>
+          <button type="button" id="add-education">Add Education</button>
+        </div>
+
+        <div class="form-group">
+          <label>Experience:</label>
+          <div id="experience-container">
+            <div class="experience-row">
+              <input type="text" placeholder="Job Title" name="job-title[]">
+              <input type="text" placeholder="Company" name="company[]">
+              <input type="text" placeholder="Years" name="years[]">
+            </div>
+          </div>
+          <button type="button" id="add-experience">Add Experience</button>
+        </div>
+
+        <button type="reset" id="clear-form">Clear Form</button>
+      </form>
+    </section>
+    
+    <section class="resume-preview">
+      <h2>Resume Preview</h2>
+      <div id="resume-output">
+        <p><strong>Name:</strong> <span id="preview-name">[Your Name]</span></p>
+        <p><strong>Email:</strong> <span id="preview-email">[Your Email]</span></p>
+        <p><strong>Phone:</strong> <span id="preview-phone">[Your Phone]</span></p>
+        <p><strong>Profile Summary:</strong> <span id="preview-summary">[Your Profile Summary]</span></p>
+        <p><strong>Skills:</strong> <span id="preview-skills">[Your Skills]</span></p>
+        <div id="preview-education">
+          <h3>Education</h3>
+          <!-- Education details will appear here dynamically -->
+        </div>
+        <div id="preview-experience">
+          <h3>Experience</h3>
+          <!-- Experience details will appear here dynamically -->
+        </div>
+      </div>
+    </section>
+    <button type="button" id="print-resume">Print Resume</button>
+
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
